@@ -12,6 +12,10 @@ from ..models import Post
 def total_posts():
     return Post.published.count()
 
+@register.assignment_tag
+def get_tags():
+    return Post.tags.all()
+
 @register.inclusion_tag('blog/post/latest_posts.html')
 def show_latest_posts(count=5):
     latest_posts = Post.published.order_by('-publish')[:count]

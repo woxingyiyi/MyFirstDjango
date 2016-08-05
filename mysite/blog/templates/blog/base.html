@@ -37,6 +37,17 @@
             </li>
             {% endfor %}
         </ul>
+        <h3>Tags</h3>
+            {% get_tags as tags %}
+        <ul>
+            {% for tag in tags %}
+            <li>
+                <a href="{% url "blog:post_list_by_tag" tag.slug %}">
+                    {{ tag.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
