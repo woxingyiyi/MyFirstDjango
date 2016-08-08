@@ -28,8 +28,8 @@
 </head>
 <body>
     <div id="header">
-        <div class="pure-menu pure-menu-open pure-menu-horizontal">
-            <a class="pure-menu-heading" style="font-size:30px" href="">MyFirstDjango</a>
+        <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal">
+            <a class="pure-menu-heading"  href="">MyFirstDjango</a>
 
             <ul>
                 <li class="pure-menu-selected"><a href="/">Home</a></li>
@@ -47,40 +47,44 @@
                 </div>
             </div>
             <div class="sidebar pure-u-1 pure-u-md-1-4">
-                <h2>My blog</h2>
-                    <p>
-                        This is my blog. <br/>
-                        I've written {% total_posts %} posts so far.
-                    </p>
-                    <p>
-                        <a href="{% url "blog:post_feed" %}">
-                            Subscribe to my RSS feed
-                        </a>
-                    </p>
-                <h3>Latest posts</h3>
-            
-                    {% show_latest_posts 3 %}
-            
-                <h3>Most commented posts</h3>
-                    {% get_most_commented_posts as most_commented_posts %}
-                <ul>
-                    {% for post in most_commented_posts %}
-                    <li>
-                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-                <h3>Tags</h3>
-                    {% get_tags as tags %}
-                <ul>
-                    {% for tag in tags %}
-                    <li>
-                        <a href="{% url "blog:post_list_by_tag" tag.slug %}">
-                            {{ tag.name }}
-                        </a>
-                    </li>
-                    {% endfor %}
-                </ul>
+                <div class="widget">                    
+                    <h3 class="title">My blog</h3>
+                        <p>
+                            This is my blog. <br/>
+                            I've written {% total_posts %} posts so far.
+                        </p>
+                        <p>
+                            <a href="{% url "blog:post_feed" %}">
+                                Subscribe to my RSS feed
+                            </a>
+                        </p>
+                </div>
+                <div class="widget">    
+                    <h3 class="title">Latest posts</h3>               
+                        {% show_latest_posts 3 %}
+                </div>
+                <div class="widget">    
+                    <h3 class="title">Most commented posts</h3>
+                        {% get_most_commented_posts as most_commented_posts %}
+                    <ul>
+                        {% for post in most_commented_posts %}
+                        <li>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="widget">    
+                    <h3 class="title">Tags</h3>
+                    <div class="tag-cloud">
+                        {% get_tags as tags %}                    
+                        {% for tag in tags %}                        
+                            <a href="{% url "blog:post_list_by_tag" tag.slug %}">
+                                {{ tag.name }}
+                            </a>                        
+                        {% endfor %}                    
+                    </div>
+                </div>
             </div>                    
         </div>    
         <div class="footer">
@@ -94,4 +98,7 @@
             </div>
     </div>
 </body>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
 </html>

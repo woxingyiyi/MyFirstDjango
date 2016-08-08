@@ -27,7 +27,7 @@
               {{ post.body|markdown|truncatewords_html:30 }}    
             </p>
           </div>
-          <a class="pure-button button-secondary post-button" href="{{ post.get_absolute_url }}" title="{{ post.title }}"><b>Read All</b></a>
+          <a class="pure-button button-secondary post-button" href="{{ post.get_absolute_url }}" title="{{ post.title }}">Read All</a>
         </section>
       {% endfor %}
   {% include "pagination.html" with page=posts %}

@@ -4,7 +4,9 @@
     box-sizing: border-box;
     
 }
-
+body{
+    background:#ebebeb;
+}
 a {
     text-decoration: none;
     color: rgb(61, 146, 201);
@@ -18,7 +20,32 @@ a:focus,
 h3 {
     font-weight: 100;
 }
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu.pure-menu-open {
+    background: deepskyblue;
+}
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 400;
+    font-size: 120%;
+}
+.home-menu .pure-menu-selected a {
+    color: white;
+}
 
+.home-menu a {
+    color: white;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: blue;
+}
 /* LAYOUT CSS */
 .pure-img-responsive {
     max-width: 100%;
@@ -39,8 +66,46 @@ h3 {
     /*background: rgb(61, 79, 93);*/
     /*color: #fff;*/
     padding-top: 5em;
+    padding-left: 0.25em;
+    padding-right: 1.25em;    
 }
+.sidebar .widget {
+    background: #ffffff;
+    padding: 21px 30px;
+    margin-bottom: 35px 
+}
+    .widget .title {
+        margin-top: 0;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #ebebeb;
+        margin-bottom: 21px;
+        position: relative;
+    }
+    .widget .title:after {
+        content: "";
+        width: 90px;
+        height: 1px;
+        background: deepskyblue;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+    }
 
+    .widget .tag-cloud a {
+        border: 1px solid #ebebeb;
+        padding: 2px 7px;
+        color: #959595;
+        line-height: 1.5em;
+        display: inline-block;
+        margin: 0 7px 7px 0;    
+        transition: all 0.2s ease;
+    }
+    .widget .tag-cloud a:hover {
+        color: #ffffff;
+        background: deepskyblue;
+        border: 1px solid deepskyblue;
+        text-decoration: none;
+    }   
 .brand-title,
 .brand-tagline {
     margin: 0;
@@ -82,7 +147,7 @@ h3 {
     text-transform: uppercase;
     color: #aaa;
     border-bottom: 1px solid #eee;
-    padding: 0.4em 0;
+    /*padding: 0.1em 0;*/
     font-size: 80%;
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -91,10 +156,23 @@ h3 {
 .content {
     padding: 2em 1em 0;
 }
-
+.detail{
+    padding-bottom: 2em;
+    box-shadow: 0 0px 5px #c2c2c2;
+    background: #ffffff;
+    padding: 15px;
+    margin-top: 3em;
+}
+    .detail h1{
+        text-align: center;
+    }
+    .detail .date{
+        font-style: italic; 
+    }
 .post {
     padding-bottom: 2em;
     box-shadow: 0 0px 5px #c2c2c2;
+    background: #ffffff;
 }
     /*.post::hover{
         border: 5px solid #e0e0e0;
@@ -103,6 +181,7 @@ h3 {
     }*/
 .posts{    
     width: 90%;
+    
 }
 .post-title {
     font-size: 2em;
@@ -140,7 +219,7 @@ h3 {
         background: #5aba59;
     }
     .post-category-pure {
-        background: rgb(204, 232, 207);
+        background: deepskyblue;
     }
     .post-category-yui {
         background: #8156a7;
@@ -161,7 +240,7 @@ h3 {
 .post-button{
    
     margin-right: 12px;
-    font-size: 10px;
+    font-size: 12px;
     float: right !important;    
 }
 .pure-button-next{
@@ -180,7 +259,10 @@ h3 {
     background: none;
 }
 .button-secondary {
-            background: rgb(204, 232, 207); /* this is a light blue */
+            /*background: rgb(204, 232, 207); */
+            background:deepskyblue;
+            color: white;
+            /*color: green;*/
         }
 
 @media (min-width: 48em) {
@@ -198,4 +280,10 @@ h3 {
         padding-top: 5em;
         
     }
+    .home-menu {
+        text-align: left;
+    }
+        .home-menu ul {
+            float: right;
+        }
 }
