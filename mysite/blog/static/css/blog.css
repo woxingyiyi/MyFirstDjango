@@ -72,7 +72,8 @@ h3 {
 .sidebar .widget {
     background: #ffffff;
     padding: 21px 30px;
-    margin-bottom: 35px 
+    margin-bottom: 35px;
+    box-shadow: 0 0px 5px #c2c2c2; 
 }
     .widget .title {
         margin-top: 0;
@@ -106,6 +107,13 @@ h3 {
         border: 1px solid deepskyblue;
         text-decoration: none;
     }   
+.comment{
+    background: #ffffff;
+    box-shadow: 0 0px 5px #c2c2c2;
+}
+    .comment .info{
+        
+    }
 .brand-title,
 .brand-tagline {
     margin: 0;

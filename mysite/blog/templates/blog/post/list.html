@@ -15,7 +15,7 @@
               <p class="post-meta">
                 Published {{ post.publish }} by {{ post.author }}     
                 {% for tag in post.tags.all %}
-                    <a href="{% url "blog:post_list_by_tag" tag.slug %}" class="post-category post-category-pure" >
+                    <a href="{% url "blog:post_list_by_tag" tag.slug %}" class="post-category post-category-pure pure-input-rounded" >
                       {{ tag.name }}
                     </a>
                     {% if not forloop.last %}, {% endif %}
