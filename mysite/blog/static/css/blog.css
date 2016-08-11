@@ -112,7 +112,8 @@ h3 {
     box-shadow: 0 0px 5px #c2c2c2;
 }
     .comment .info{
-        
+        padding: 2px 0;
+        font-style:italic;
     }
 .brand-title,
 .brand-tagline {
@@ -197,6 +198,13 @@ h3 {
     margin-bottom: 0.2em;
     text-align: center;
     padding: 20px 15px 0 15px;
+}
+.post-title a{
+    color: black;
+}
+.post-title a:hover{
+    color: deepskyblue;
+    
 }
 .post-avatar {
     border-radius: 50px;
